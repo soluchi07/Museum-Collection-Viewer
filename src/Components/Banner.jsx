@@ -10,7 +10,7 @@ function Banner() {
     <>
     <div id="top-banner">
         <img src="src/assets/cooper-hewitt.png" alt="cooper hewitt logo" />
-        <h2></h2>
+        <h2>See What's On Display At The Cooper Hewitt Smithsonian Design Museum</h2>
     </div>
       
     </>

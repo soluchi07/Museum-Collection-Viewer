@@ -9,7 +9,9 @@
     display: flex;
     background-image: url('src/assets/pattern.avif');
     background-size: contain;
-    /* justify-content: space-between; */
+    justify-content: space-between;
+    align-items: center;
+    
 }
 
 img{
@@ -17,5 +19,14 @@ img{
     width: 8em;;
     margin: 5px;
     left: 20px;
+    position: relative;
+}
+
+#top-banner h2{
+    margin: 3px ;
+    color: wheat;
+    -webkit-text-stroke: 0.8px black;
+    font-size: 30px;
+    right: 20px;
     position: relative;
 }

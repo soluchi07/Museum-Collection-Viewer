@@ -23,7 +23,7 @@
 }
 
 #data-block{
-  background-color: grey;
+  /* background-color: grey; */
   border: 2px solid black;
   flex-direction: row;
   width: 100vw;
