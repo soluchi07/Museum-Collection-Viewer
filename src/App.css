@@ -36,6 +36,7 @@
 #list-container{
   /* top: 15vh; */
   position: relative;
+  
 }
 
 h2{
@@ -54,4 +55,30 @@ input{
 input::placeholder{
   text-align: center;
   font-size: 17px;
+}
+
+select{
+  width: 30vw;
+  height: 30px;
+}
+
+#input-container{
+  width: 50vw;
+  height: 100px;
+  /* display: flex;
+  flex-direction: row; */
+}
+
+#select-container{
+  width: 50vw;
+  height: 100px;
+  /* display: flex;
+  flex-direction: row; */
+}
+
+#inpu-select-container{
+  width: 100vw;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
 }

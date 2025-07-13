@@ -16,8 +16,10 @@ function App() {
   const [objects, setObjects] = useState([]);
   const [filteredObjects, setFilteredObjects] = useState([]);
   const [CommonStartDate, setCommonStartDate] = useState('');
-  const [CommonEndDate, setCommonEndDate] = useState('');
+  const [commonMedium, setCommonMedium] = useState('');
   const [inputValue, setInputValue] = useState('');
+  const [mediums, setMediums] = useState([]);
+  const [selectedMedium, setSelectedMedium] = useState('');
   
   
    useEffect(() => {
@@ -33,6 +35,9 @@ function App() {
           max = year;
         }
       }
+      if (year_type === 'medium'){
+        setMediums(Object.keys(res));
+      }
       return max
     }
     const fetchData = async() => {
@@ -41,7 +46,7 @@ function App() {
       setObjects(result);
       setFilteredObjects(result);
       setCommonStartDate(findMostCommonYear('year_start', result));
-      setCommonEndDate(findMostCommonYear('year_end', result));
+      setCommonMedium(findMostCommonYear('medium', result));
     }
 
     
@@ -59,16 +64,28 @@ function App() {
     }  
   }
 
+  const handleSelect = (e) => {
+    let input = e.target.value;
+    if (input !== '') {
+      const new_list = objects.filter((obj) => obj.medium.toLowerCase().includes(input.toLowerCase()));
+      setFilteredObjects(new_list);
+    } else{
+      setFilteredObjects(objects);
+    } 
+  }
+
   return (
     <>
       <Banner/>
       <div className="bottom-half">
         <div id="data-block">
-          <DataBlock title='Number of Works on Display' data={objects.length}/>
-          <DataBlock title='Most Works Have A Start Date of' data={CommonStartDate}/>
-          <DataBlock title='Most Works Have An End Date of' data={CommonEndDate}/>
+          <DataBlock title='Number of Works on Display' data={ filteredObjects.length + '/' + objects.length }/>
+          <DataBlock title='Most Common Start Date' data={CommonStartDate}/>
+          <DataBlock title='Most Common Medium' data={commonMedium.toUpperCase()}/>
         </div>
-        <h2>Search For A Piece Here👇🏾</h2>
+        <div id='inpu-select-container'>
+        <div id="input-container">
+          <h2>Search For A Piece Here👇🏾</h2>
           <input
             name='Seach Bar'
             type="text"
@@ -79,8 +96,23 @@ function App() {
               searchList(e);
             }}
           />
+        </div>
+        <div id="select-container">
+            <h2>Filter by Medium:</h2>
+          <select name="mediums" id="mediums" onChange={(e) => {
+              setSelectedMedium(e.target.value);
+              handleSelect(e);
+          }}>
+              <option value="">--Please choose a medium--</option>
+            {mediums && mediums.map((medium, index) => (
+              <option key={index} value={medium}>{medium.toUpperCase()}</option>
+            ))}
+          </select>
+        </div>
+        </div>
+        
         <div id="list-container">
-          <List objects={filteredObjects} end_date={CommonEndDate}/>
+          <List objects={filteredObjects} end_date={CommonStartDate}/>
         </div>
       </div>
       
