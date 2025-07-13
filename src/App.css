@@ -1,0 +1,51 @@
+#root {
+  max-width: 1280px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items:start;
+  flex-direction: column;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color:black;
+}
+
+.bottom-half{
+  width: 100vw;
+  /* top: 10vh; */
+  position: relative;
+  display: flex;
+  align-items:center;
+  justify-items: center;
+  flex-direction: column;
+  
+}
+
+#data-block{
+  background-color: grey;
+  border: 2px solid black;
+  flex-direction: row;
+  width: 100vw;
+  /* top: 11vh; */
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+#list-container{
+  /* top: 15vh; */
+  position: relative;
+}
+
+h2{
+    text-decoration: none;
+}
+
+input{
+  margin: 7px;
+  width: 30vw;
+  height: 30px;
+  background-color:rgba(255, 255, 255, 0.874);
+  color:black;
+}

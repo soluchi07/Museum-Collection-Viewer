@@ -1,0 +1,21 @@
+#top-banner{
+    margin: 0;
+    padding: 0;
+    height: 11vh;
+    width: 100vw;
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+    display: flex;
+    background-image: url('src/assets/pattern.avif');
+    background-size: contain;
+    /* justify-content: space-between; */
+}
+
+img{
+    height: 10vh;
+    width: 8em;;
+    margin: 5px;
+    left: 20px;
+    position: relative;
+}
