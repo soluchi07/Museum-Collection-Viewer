@@ -11,8 +11,8 @@ const ACCESS_TOKEN = import.meta.env.VITE_APP_ACCESS_TOKEN
 
 function App() {
   const object_ondisplay_URL = 'https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.objects.getOnDisplay&access_token=' + ACCESS_TOKEN
-  const getimage_URL = 'https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.objects.getImages&access_token='+ ACCESS_TOKEN +'&object_id=<OBJECT_ID>'
-  const [objectID, setObjectID] = useState('');
+  // const getimage_URL = 'https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.objects.getImages&access_token='+ ACCESS_TOKEN +'&object_id=<OBJECT_ID>'
+  // const [objectID, setObjectID] = useState('');
   const [objects, setObjects] = useState([]);
   const [filteredObjects, setFilteredObjects] = useState([]);
   const [CommonStartDate, setCommonStartDate] = useState('');
@@ -68,7 +68,7 @@ function App() {
           <DataBlock title='Most Works Have A Start Date of' data={CommonStartDate}/>
           <DataBlock title='Most Works Have An End Date of' data={CommonEndDate}/>
         </div>
-        <h2>Search For a piece here👇🏾</h2>
+        <h2>Search For A Piece Here👇🏾</h2>
           <input
             name='Seach Bar'
             type="text"
@@ -80,7 +80,7 @@ function App() {
             }}
           />
         <div id="list-container">
-          <List objects={filteredObjects} />
+          <List objects={filteredObjects} end_date={CommonEndDate}/>
         </div>
       </div>
       

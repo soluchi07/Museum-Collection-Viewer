@@ -1,31 +1,31 @@
-import { FixedSizeList as VirtualList } from 'react-window'
 import './List.css'
 
 
 
-function List({ objects }) {
-  const Row = ({ index, style }) => {
-    const obj = objects[index];
-    return (
-      <div key={obj.id} className="object-item" style={style}>
-        <h2>{obj.title}</h2>
-        <p>ID: {obj.id}</p>
-        <p>Description: {obj.gallery_text && obj.gallery_text.slice(0, 64) + '...'}</p>
-        <a href={obj.url} target="_blank" rel="noopener noreferrer">See full object entry here!</a>
-      </div>
-    );
-  };
+function List({objects, end_date}) {
+  
 
   return (
-    <VirtualList
-      height={600} // Adjust height as needed
-      itemCount={objects.length}
-      itemSize={120} // Adjust row height as needed
-      width="100%"
-    >
-      {Row}
-    </VirtualList>
-  );
+    <>
+        {objects && objects.map((obj) => (
+            <div key={obj.id} className="object-item">
+                <h2>{obj.title}</h2>
+                <p>ID: {obj.id}</p>
+                <p>{obj.gallery_text && 'Description: ' + obj.gallery_text.slice(0,64)+'...'}</p>
+                <a href={obj.url} target="_blank">See full object entry here!</a>
+            </div>
+        )
+
+        )}
+
+        { end_date === '' && 
+        <> 
+            <h2>Give it a few seconds please😅</h2>
+            <img src='src/assets/loading.webp' alt='loading gif'/>
+        </>}
+        {objects.length === 0 && end_date !== '' && <h2 id='no-item'>Item Not Found</h2>}
+    </>
+  )
 }
 
 export default List
