@@ -55,11 +55,17 @@ input{
 input::placeholder{
   text-align: center;
   font-size: 17px;
+  
 }
 
 select{
   width: 30vw;
-  height: 30px;
+  height: 35px;
+  background-color:rgba(255, 255, 255, 0.874);
+  color:rgba(0, 0, 0, 0.532);
+  font-size: 17px;
+  
+
 }
 
 #input-container{
@@ -76,7 +82,7 @@ select{
   flex-direction: row; */
 }
 
-#inpu-select-container{
+#input-select-container{
   width: 100vw;
   height: 100px;
   display: flex;

@@ -36,7 +36,7 @@ function App() {
         }
       }
       if (year_type === 'medium'){
-        setMediums(Object.keys(res));
+        setMediums(Object.keys(res).slice(1));
       }
       return max
     }
@@ -83,7 +83,7 @@ function App() {
           <DataBlock title='Most Common Start Date' data={CommonStartDate}/>
           <DataBlock title='Most Common Medium' data={commonMedium.toUpperCase()}/>
         </div>
-        <div id='inpu-select-container'>
+        <div id='input-select-container'>
         <div id="input-container">
           <h2>Search For A Piece Here👇🏾</h2>
           <input
