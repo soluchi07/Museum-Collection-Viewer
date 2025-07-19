@@ -19,7 +19,6 @@ function App() {
   const [commonMedium, setCommonMedium] = useState('');
   const [inputValue, setInputValue] = useState('');
   const [mediums, setMediums] = useState([]);
-  const [selectedMedium, setSelectedMedium] = useState('');
   
   
    useEffect(() => {
@@ -100,7 +99,6 @@ function App() {
         <div id="select-container">
             <h2>Filter by Medium:</h2>
           <select name="mediums" id="mediums" onChange={(e) => {
-              setSelectedMedium(e.target.value);
               handleSelect(e);
           }}>
               <option value="">--Please choose a medium--</option>

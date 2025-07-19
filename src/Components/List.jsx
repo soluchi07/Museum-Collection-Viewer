@@ -1,4 +1,5 @@
 import './List.css'
+import { Link } from "react-router-dom"
 
 
 
@@ -9,11 +10,18 @@ function List({objects, end_date}) {
     <>
         {objects && objects.map((obj) => (
             <div key={obj.id} className="object-item">
-                <h2>{obj.title}</h2>
+                <Link
+                  to={`/details/${obj.id}`}
+                  key={obj.id}
+                  style={List.css}
+                >
+
+                  <h2>{obj.title}</h2>
+                </Link>
                 <p>ID: {obj.id}</p>
                 <p>Medium: {obj.medium}</p>
                 <p>{obj.gallery_text && 'Description: ' + obj.gallery_text.slice(0,64)+'...'}</p>
-                <a href={obj.url} target="_blank">See full object entry here!</a>
+                <p>Click on the title for more details!</p>
             </div>
         )
 

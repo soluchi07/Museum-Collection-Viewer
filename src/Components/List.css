@@ -7,9 +7,6 @@
 
 }
 
-.object-item h2{
-    text-decoration: underline;
-}
 
 #no-item{
     position: relative;
@@ -18,3 +15,4 @@
     opacity: 0.5;
     font-size: 50px;
 }
+

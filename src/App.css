@@ -1,5 +1,6 @@
-#root {
+#root, #layout{
   max-width: 1280px;
+  min-width: 100%;
   margin: 0;
   padding: 0;
   text-align: center;
@@ -12,7 +13,7 @@
 }
 
 .bottom-half{
-  width: 100vw;
+  width: 100%;
   /* top: 10vh; */
   position: relative;
   display: flex;
@@ -26,7 +27,7 @@
   /* background-color: grey; */
   border: 2px solid black;
   flex-direction: row;
-  width: 100vw;
+  max-width: 100vw;
   /* top: 11vh; */
   position: relative;
   display: flex;
@@ -45,8 +46,8 @@ h2{
 
 input{
   margin: 7px;
-  width: 30vw;
-  height: 30px;
+  max-width: 30vw;
+  max-height: 30px;
   background-color:rgba(255, 255, 255, 0.874);
   color:black;
   font-size: 17px;
@@ -59,8 +60,8 @@ input::placeholder{
 }
 
 select{
-  width: 30vw;
-  height: 35px;
+  max-width: 30vw;
+  max-height: 35px;
   background-color:rgba(255, 255, 255, 0.874);
   color:rgba(0, 0, 0, 0.532);
   font-size: 17px;
@@ -69,22 +70,131 @@ select{
 }
 
 #input-container{
-  width: 50vw;
-  height: 100px;
+  max-width: 50vw;
+  max-height: 100px;
   /* display: flex;
   flex-direction: row; */
 }
 
 #select-container{
-  width: 50vw;
-  height: 100px;
+  max-width: 50vw;
+  max-height: 100px;
   /* display: flex;
   flex-direction: row; */
 }
 
 #input-select-container{
-  width: 100vw;
-  height: 100px;
+  max-width: 100vw;
+  max-height: 100px;
   display: flex;
   flex-direction: row;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  background: #1d1f1d;
+  margin: 20px 30px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  border: 3px solid white;
+}
+
+.object-details a {
+  color: white;
+  text-decoration: underline;
+}
+#notfound p {
+  font-size: 50px;
+  opacity: 0.6;
+}
+#notfound {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 40vh; /* Adjust as needed */
+  width: 100%;
+}
+
+#gallery-text{
+  margin: auto;
+  padding: 20px;
+  border: 10px groove black;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  /* color: white;  */
+}
+
+
+.object-details{
+  background-color:#8B4513;
+  border: 3px solid black;
+}
+
+.object-item a, #notfound a{
+    color: #556B2F;
+}
+
+.object-item:hover a{
+    /* color: #FFD700;  */
+    text-shadow: 0 0 10px white, 0 0 20px black, 0 0 40px black;
+}
+
+.details-table-container, .object-details{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  flex-direction: column;
+  margin: 0 auto;        /* Center the container itself */
+  padding: 20px;   
+}
+
+.details-table-container table {
+  margin: 0;
+}
+
+table, tr, tbody{
+  border: 3px solid black;
+}
+
+.images {
+  height: 30vw;
+  width: auto;
+  border: 3.5px solid #1d1f1d;
+}
+
+.details-table-container table {
+  border-collapse: collapse; /* Ensures borders are shared */
+  width: 100%; /* Optional: makes table fill container */
+}
+
+.details-table-container tr {
+  border: 2px solid #1d1f1d; /* Outline each row */
+  background-color: wheat; /* Example: light beige background */
+}
+
+.details-table-container th,
+.details-table-container td {
+  border: 1px solid #888; /* Optional: cell borders */
+  padding: 8px 16px;
+  text-align: left;
+}
+
+/* Optional: alternate row color for better readability */
+.details-table-container tr:nth-child(even) {
+  background-color: #8B4513;
+  color: white;
 }
