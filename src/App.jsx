@@ -4,15 +4,14 @@ import Banner from './Components/Banner'
 import DataBlock from './Components/DataBlock'
 import List from './Components/List'
 import axios from 'axios'
-const API_KEY = import.meta.env.VITE_APP_API_KEY
+import MediumChart from './Components/MediumChart'
 const ACCESS_TOKEN = import.meta.env.VITE_APP_ACCESS_TOKEN
 
 
 
 function App() {
   const object_ondisplay_URL = 'https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.objects.getOnDisplay&access_token=' + ACCESS_TOKEN
-  // const getimage_URL = 'https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.objects.getImages&access_token='+ ACCESS_TOKEN +'&object_id=<OBJECT_ID>'
-  // const [objectID, setObjectID] = useState('');
+
   const [objects, setObjects] = useState([]);
   const [filteredObjects, setFilteredObjects] = useState([]);
   const [CommonStartDate, setCommonStartDate] = useState('');
@@ -83,35 +82,41 @@ function App() {
           <DataBlock title='Most Common Medium' data={commonMedium.toUpperCase()}/>
         </div>
         <div id='input-select-container'>
-        <div id="input-container">
-          <h2>Search For A Piece Here👇🏾</h2>
-          <input
-            name='Seach Bar'
-            type="text"
-            value={inputValue}
-            placeholder='Search by Title'
-            onChange={(e) => {
-              setInputValue(e.target.value);
-              searchList(e);
-            }}
-          />
+          <div id="input-container">
+            <h2>Search For A Piece Here👇🏾</h2>
+            <input
+              name='Seach Bar'
+              type="text"
+              value={inputValue}
+              placeholder='Search by Title'
+              onChange={(e) => {
+                setInputValue(e.target.value);
+                searchList(e);
+              }}
+            />
+          </div>
+          <div id="select-container">
+              <h2>Filter by Medium:</h2>
+            <select name="mediums" id="mediums" onChange={(e) => {
+                handleSelect(e);
+            }}>
+                <option value="">--Please choose a medium--</option>
+              {mediums && mediums.map((medium, index) => (
+                <option key={index} value={medium}>{medium.toUpperCase()}</option>
+              ))}
+            </select>
+          </div>
         </div>
-        <div id="select-container">
-            <h2>Filter by Medium:</h2>
-          <select name="mediums" id="mediums" onChange={(e) => {
-              handleSelect(e);
-          }}>
-              <option value="">--Please choose a medium--</option>
-            {mediums && mediums.map((medium, index) => (
-              <option key={index} value={medium}>{medium.toUpperCase()}</option>
-            ))}
-          </select>
-        </div>
+        
+        <div id="charts">
+            <MediumChart type='medium' products={objects}/>
+            <MediumChart type='year' products={objects}/>
         </div>
         
         <div id="list-container">
           <List objects={filteredObjects} end_date={CommonStartDate}/>
         </div>
+                 
       </div>
       
     </>
