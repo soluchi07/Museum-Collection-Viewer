@@ -1,68 +1,68 @@
-# Web Development Project 6 - *Museum Collection Viewer: Cooper Hewitt Edition*
+# Museum Collection Viewer – Cooper Hewitt Edition
 
-Submitted by: **Soluchi Fidel-Ibeabuchi**
+**Author:** Soluchi Fidel-Ibeabuchi
+**Role:** Developer | Computer Science Student @ Howard University
 
-This web app: **allows users to browse, search, and visualize objects from the Cooper Hewitt museum collection, view detailed information for each item, and explore interactive charts based on the collection data.**
+The **Museum Collection Viewer** is a React-based web app that allows users to **explore the Cooper Hewitt museum collection** through searchable object listings, detailed item pages, and **interactive data visualizations**.
 
-Time spent: **2.5** hours spent in total
+This project showcases my ability to work with **public APIs, data visualization libraries (Recharts), and dynamic routing** to create an engaging, user-friendly interface for browsing and interpreting cultural datasets.
 
-## Required Features
+---
 
-The following **required** functionality is completed:
+## 🚀 Features
 
-- [x] **Clicking on an item in the list view displays more details about it**
-  - Clicking on an item in the dashboard list navigates to a detail view for that item
-  - Detail view includes extra information about the item not included in the dashboard view
-  - The same sidebar is displayed in detail view as in dashboard view
-  - *To ensure an accurate grade, your sidebar **must** be viewable when showing the details view in your recording.*
-- [x] **Each detail view of an item has a direct, unique URL link to that item’s detail view page**
-  -  *To ensure an accurate grade, the URL/address bar of your web browser **must** be viewable in your recording.*
-- [x] **The app includes at least two unique charts developed using the fetched data that tell an interesting story**
-  - At least two charts should be incorporated into the dashboard view of the site
-  - Each chart should describe a different aspect of the dataset
+### Core Functionality
 
+* **Object Browsing & Details:** Users can view a searchable list of museum objects and click through to detail pages with extended metadata.
+* **Unique URLs for Items:** Each item has a **direct, shareable URL** linking to its detail page.
+* **Interactive Dashboard:** Dashboard view integrates **at least two custom charts** visualizing different aspects of the dataset.
 
-The following **optional** features are implemented:
+### Extended Functionality
 
-- [ ] The site’s customized dashboard contains more content that explains what is interesting about the data 
-  - e.g., an additional description, graph annotation, suggestion for which filters to use, or an additional page that explains more about the data
-- [ ] The site allows users to toggle between different data visualizations
-  - User should be able to use some mechanism to toggle between displaying and hiding visualizations 
+* Built reusable UI components with consistent sidebar navigation.
+* Implemented responsive data-driven visualizations using **Recharts**.
+* Designed pages to clearly separate **high-level collection insights** and **granular object details**.
 
-  
-The following **additional** features are implemented:
+---
 
-* [ ] List anything else that you added to improve the site's functionality!
+## 🛠️ Tech Stack
 
-## Video Walkthrough
+* **Frontend:** React
+* **Data Source:** Cooper Hewitt Museum API
+* **Data Visualization:** Recharts (custom charts and dashboards)
+* **Routing:** React Router
+* **Version Control:** Git/GitHub
 
-Here's a walkthrough of implemented user stories:
+---
 
-<img src='museum-walkthrough2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+## 📸 Demo & Walkthrough
 
-<!-- Replace this with whatever GIF tool you used! -->
-GIF created with screentogif 
-<!-- Recommended tools:
-[Kap](https://getkap.co/) for macOS
-[ScreenToGif](https://www.screentogif.com/) for Windows
-[peek](https://github.com/phw/peek) for Linux. -->
+### Interactive Dashboard & Details
 
-## Notes
+<img src='museum-walkthrough2.gif' alt='Museum Viewer Walkthrough' />  
 
-The formatting was a little hard for me. Recharts was nice once I got the hang out it but the beginning was a little rough as well.
+---
 
-## License
+## ⚡ Challenges & Learnings
 
-    Copyright 2025 Soluchi Fidel-Ibeabuchi
+* **Data Visualization:** Learned to design and implement charts that tell meaningful stories with cultural data.
+* **API Integration:** Worked with the Cooper Hewitt API to fetch, parse, and display object information dynamically.
+* **UI/UX Design:** Balanced a clean, functional dashboard layout with detail-rich item views.
+* **Formatting & Styling:** Overcame initial challenges in working with Recharts and custom component structures.
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+---
 
-        http://www.apache.org/licenses/LICENSE-2.0
+## 📚 Key Takeaways
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
+* Strengthened skills in **React development and API consumption**.
+* Applied **data visualization techniques** to make datasets more interactive and insightful.
+* Learned how to structure apps with **dynamic routing and reusable components**.
+* Built a project that combines **technical execution with cultural storytelling**.
+
+---
+
+## 📄 License
+
+Apache 2.0 License © 2025 Soluchi Fidel-Ibeabuchi
+
+---
